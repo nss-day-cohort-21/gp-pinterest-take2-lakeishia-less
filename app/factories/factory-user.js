@@ -5,7 +5,7 @@
     Gets the data of what user is currently logged in. 
  */
 
-app.factory('PinApp', function($q, $http){
+app.factory('userFactory', function($q, $http){
 
 	let currentUser = null;
 
