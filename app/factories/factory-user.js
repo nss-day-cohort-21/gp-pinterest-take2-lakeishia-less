@@ -16,7 +16,7 @@ app.factory('PinApp', function($q, $http){
 				if(user){
 					currentUser = user.uid;
 					console.log("user", user.uid);
-					resolve(true)
+					resolve(true);
 				}else{
 					resolve(false);
 				}
@@ -30,7 +30,7 @@ app.factory('PinApp', function($q, $http){
 
 	const logOut = function(){
 		console.log("logOutUser");
-		return.firebase.auth().signOut();
+		return firebase.auth().signOut();
 	};
 
 	let googleAuth = new firebase.auth.GoogleAuthProvider();

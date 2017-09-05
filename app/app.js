@@ -7,7 +7,14 @@ const app = angular.module("PinApp", ["ngRoute"]);
 
 
 //2. Create a routeProvider for all partials
-
+app.config(($routeProvider) => {
+	$routeProvider
+	.when('/', {
+		templateUrl: 'partials/home.html',
+		controller: 'homeCtrl'
+	})
+	.otherwise('/');
+});
 
 
 //pulls in firebase data for app to use. 
