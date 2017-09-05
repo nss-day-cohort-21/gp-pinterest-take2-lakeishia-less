@@ -6,7 +6,7 @@
     Provides all of the data from firebase, and CRUD functions for all the data.
  */
 
-app.factory("todoFactory", function($q, $http, FBCreds){
+app.factory("pinFactory", function($q, $http, FBCreds){
 
     const getAllPins = function(user){
         let pins = [];

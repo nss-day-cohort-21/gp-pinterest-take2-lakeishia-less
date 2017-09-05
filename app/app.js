@@ -29,7 +29,6 @@ app.config(($routeProvider) => {
 });
 
 
-
 //pulls in firebase data for app to use. 
 app.run(($location, FBCreds) => {
 	let creds = FBCreds;
