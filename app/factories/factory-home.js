@@ -1,5 +1,11 @@
 "use strict";
 
+
+
+/*
+    Provides all of the data from firebase, and CRUD functions for all the data.
+ */
+
 app.factory("todoFactory", function($q, $http, FBCreds){
 
     const getAllPins = function(user){
@@ -22,3 +28,4 @@ app.factory("todoFactory", function($q, $http, FBCreds){
         });
     };
 });
+

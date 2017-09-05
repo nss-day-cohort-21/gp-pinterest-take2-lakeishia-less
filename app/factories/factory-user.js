@@ -1,5 +1,10 @@
 "use strict";
 
+
+/*
+    Gets the data of what user is currently logged in. 
+ */
+
 app.factory('PinApp', function($q, $http){
 
 	let currentUser = null;
@@ -35,3 +40,4 @@ app.factory('PinApp', function($q, $http){
 	};
 	return {userLoggedIn, getCurrentUser, logOut, authWithGoogle};
 });
+
