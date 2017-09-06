@@ -23,10 +23,17 @@ app.factory('userFactory', function($q, $http){
 				}
 			});
 		});
+		
 	};
-	
+console.log("logged in current test", currentUser);
+
 	const getCurrentUser = function(){
 		return currentUser;
+	};
+
+	const addUID = function(){
+		// currentUser = user.uid;
+		// console.log("", value);
 	};
 
 	const logOut = function(){
@@ -41,6 +48,6 @@ app.factory('userFactory', function($q, $http){
 	};
 
 
-	return {isAuthenticated, getCurrentUser, logOut, authWithGoogle};
+	return {isAuthenticated, getCurrentUser, logOut, authWithGoogle, addUID};
 });
 
