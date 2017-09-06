@@ -9,9 +9,14 @@
 
  	$scope.pins = [];
  	const showAllPins = function() {
- 		pinFactory.getAllPins
+ 		pinFactory.getAllPins()
  		.then((pins) => {
  			console.log ("pins in home-controller", pins);
+        $scope.pins = pins;
  		});
  	};
+     showAllPins();
  });
+
+
+

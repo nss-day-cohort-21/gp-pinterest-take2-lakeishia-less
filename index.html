@@ -3,13 +3,20 @@
     <head>
         <title>Pinterest</title>
         <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
     </head>
-    <body>
+    <body ng-app="PinApp">
+
+        <div ng-view></div>
         
 
 
 
     <script type="text/javascript" src="./lib/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script type="text/javascript" src="./lib/node_modules/angular/angular.min.js"></script>
     <script type="text/javascript" src="./lib/node_modules/angular-route/angular-route.min.js"></script>
     <script type="text/javascript" src="./lib/node_modules/firebase/firebase.js"></script>

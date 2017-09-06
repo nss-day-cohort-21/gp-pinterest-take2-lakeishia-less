@@ -7,8 +7,7 @@
  */
 
 app.factory("pinFactory", function($q, $http, FBCreds){
-
-    const getAllPins = function(user){
+    const getAllPins = function(){
         let pins = [];
         console.log("url is", `${FBCreds.databaseURL}/pins.json`);
         return $q( (resolve, reject) => {
@@ -27,5 +26,6 @@ app.factory("pinFactory", function($q, $http, FBCreds){
                 });
         });
     };
+    return {getAllPins};
 });
 
