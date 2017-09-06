@@ -17,13 +17,14 @@ app.factory('userFactory', function($q, $http){
 					currentUser = user.uid;
 					console.log("user", user.uid);
 					resolve(true);
+					return currentUser;
 				}else{
 					resolve(false);
 				}
 			});
 		});
 	};
-
+	
 	const getCurrentUser = function(){
 		return currentUser;
 	};
@@ -38,6 +39,8 @@ app.factory('userFactory', function($q, $http){
 	let authWithGoogle = function(){
 		return firebase.auth().signInWithPopup(provider);
 	};
+
+
 	return {isAuthenticated, getCurrentUser, logOut, authWithGoogle};
 });
 

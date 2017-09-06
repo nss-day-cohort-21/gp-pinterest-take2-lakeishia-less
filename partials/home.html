@@ -2,13 +2,14 @@
 
 
   <div ng-controller="navCtrl" class="row" ng-show="isLoggedIn">
+<div class="row">
    <div ng-repeat= "pin in pins">
     <div class="col s7 m4">
       <div class="card">
-        <div class="card-image">
+        <div class="card-image" ng-controller="addPinCtrl">
           <img style="height: 200px" src="{{pin.imageURL}}">
           <span class="flow-text textShadow card-title">{{pin.title}}</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">place</i></a>
+          <a ng-click="buttonClick()" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">place</i></a>
         </div>
         <div class="card-content">
           <p>{{pin.description}}</p>
@@ -17,6 +18,7 @@
     </div>
   </div>
 </div>
+<!-- </div> -->
 
 
 
