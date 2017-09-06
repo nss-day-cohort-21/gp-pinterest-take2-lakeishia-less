@@ -24,7 +24,8 @@ app.config(($routeProvider) => {
 	$routeProvider
 	.when('/', {
 		templateUrl: 'partials/home.html',
-		controller: 'homeCtrl'
+		controller: 'homeCtrl',
+		resolve: {isAuth}
 	})
 	.otherwise('/');
 });
