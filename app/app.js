@@ -6,13 +6,13 @@ const app = angular.module("PinApp", ["ngRoute"]);
 //1. Need to create user authentication.
 let isAuth = (userFactory) => new Promise ( (resolve, reject) => {
   console.log("userFactory is", userFactory);
-  userFactory.userLoggedIn()
+  userFactory.isAuthenticated()
   .then( (userExists) => {
     if(userExists){
-      console.log("Authenticated, go ahead");
+      console.log("Authenticated");
       resolve();
     }else {
-      console.log("Authentication reject, GO AWAY");
+      console.log("REJECTED NOT Logged In");
       reject();
     }
   });

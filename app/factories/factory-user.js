@@ -9,8 +9,8 @@ app.factory('userFactory', function($q, $http){
 
 	let currentUser = null;
 
-	const userLoggedIn = function(){
-		console.log('PinApp: userLoggedIn');
+	const isAuthenticated = function(){
+		console.log('PinApp: isAuthenticated');
 		return new Promise((resolve, reject) =>{
 			firebase.auth().onAuthStateChanged((user) =>{
 				if(user){
@@ -33,11 +33,11 @@ app.factory('userFactory', function($q, $http){
 		return firebase.auth().signOut();
 	};
 
-	let googleAuth = new firebase.auth.GoogleAuthProvider();
+	let provider = new firebase.auth.GoogleAuthProvider();
 
 	let authWithGoogle = function(){
-		return firebase.auth().signInWithPopup(googleAuth);
+		return firebase.auth().signInWithPopup(provider);
 	};
-	return {userLoggedIn, getCurrentUser, logOut, authWithGoogle};
+	return {isAuthenticated, getCurrentUser, logOut, authWithGoogle};
 });
 
