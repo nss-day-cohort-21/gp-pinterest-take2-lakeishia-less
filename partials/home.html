@@ -1,11 +1,13 @@
+<!-- Home is populated with the navbar and all cards randomly populated from firebase regardless of user logged in -->
 
-<div ng-repeat= "pin in pins">
+
   <div class="row">
-    <div class="col s12 m6">
+   <div ng-repeat= "pin in pins">
+    <div class="col s7 m4">
       <div class="card">
         <div class="card-image">
           <img src="{{pin.imageURL}}">
-          <span class="card-title">{{pin.title}}</span>
+          <span class="flow-text textShadow card-title">{{pin.title}}</span>
           <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">place</i></a>
         </div>
         <div class="card-content">
@@ -16,5 +18,5 @@
   </div>
 </div>
 
-<!-- Home is populated with the navbar and all cards randomly populated from firebase regardless of user logged in -->
+
 
