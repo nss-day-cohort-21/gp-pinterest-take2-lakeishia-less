@@ -7,6 +7,6 @@
 app.controller("addPinCtrl", function($scope, pinFactory, $location, userFactory) {
 
     $scope.buttonClick = function (){
-    	console.log("Button Clicked");
+    	// addUID();
     };
 });
