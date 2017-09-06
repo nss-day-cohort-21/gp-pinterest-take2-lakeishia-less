@@ -1,4 +1,4 @@
 lib/node_modules
 css/
-app/values
+app/values/*
 lib/.sass-cache
