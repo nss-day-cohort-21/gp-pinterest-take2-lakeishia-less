@@ -1,56 +1,47 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Pinterest</title>
-        <link rel="stylesheet" type="text/css" href="css/main.css">
-
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<head>
+	<title>PinTest</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    </head>
-
-    <body>
-        <div ng-app="PinApp">
-            <div ng-include="'partials/navbar.html'"></div>
-        
-      <div ng-view></div>
-      </div>
-        
+</head>
+<body>
+	<div ng-app="PinApp">
+		<div ng-include="'partials/navbar.html'"></div>
+		<div class="col s10">
+			<div ng-view></div>
+		</div>
+	</div>
 
 
 
-
-    <script type="text/javascript" src="./lib/node_modules/jquery/dist/jquery.min.js"></script>
+<!-- Libraries -->
+	<script type="text/javascript" src="./lib/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script type="text/javascript" src="./lib/node_modules/angular/angular.min.js"></script>
     <script type="text/javascript" src="./lib/node_modules/angular-route/angular-route.min.js"></script>
     <script type="text/javascript" src="./lib/node_modules/firebase/firebase.js"></script>
 
-
+    <!-- required -->
     <script type="text/javascript" src="app/app.js"></script>
     <script type="text/javascript" src="app/values/fb-creds.js"></script>
 
-    <!-- factories -->
+        <!-- factories -->
     <script type="text/javascript" src="./app/factories/factory-home.js"></script>
     <script type="text/javascript" src="./app/factories/factory-search.js"></script>
     <script type="text/javascript" src="./app/factories/factory-user.js"></script>
-
+    <script type="text/javascript" src="./app/factories/factory-boards.js"></script>
     <!-- controllers -->
-    <script type="text/javascript" src="./app/controllers/control-board-add.js"></script>
-    <script type="text/javascript" src="./app/controllers/control-board-delete.js"></script>
-    <script type="text/javascript" src="./app/controllers/control-board-edit.js"></script>
-    <script type="text/javascript" src="./app/controllers/control-boardview.js"></script>
+    <script type="text/javascript" src="./app/controllers/control-addNewPin.js"></script>
+    <script type="text/javascript" src="./app/controllers/control-addNewBoard.js"></script>
+    <script type="text/javascript" src="./app/controllers/control-editBoard.js"></script>
+    <script type="text/javascript" src="./app/controllers/control-editPin.js"></script>
     <script type="text/javascript" src="./app/controllers/control-home.js"></script>
     <script type="text/javascript" src="./app/controllers/control-nav.js"></script>
-    <script type="text/javascript" src="./app/controllers/control-pin-add.js"></script>
-    <script type="text/javascript" src="./app/controllers/control-pin-delete.js"></script>
-    <script type="text/javascript" src="./app/controllers/control-pin-edit.js"></script>
-    <script type="text/javascript" src="./app/controllers/control-pinview.js"></script>
+    <script type="text/javascript" src="./app/controllers/control-pinsList.js"></script>
+    <script type="text/javascript" src="./app/controllers/control-boardsList.js"></script>
     <script type="text/javascript" src="./app/controllers/control-user.js"></script>
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-
-    </body>
+</body>
 </html>

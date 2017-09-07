@@ -1,31 +1,34 @@
 "use strict";
-console.log("CtrlUser");
+app.controller("userCtrl", function($scope, $window, userFactory, $location) {
+	console.log("User Control Locked and Loaded MF");
 
- app.controller("userCtrl", function($scope, $window, userFactory, $location){
- 	console.log("UserCTRL Loaded");
 
- 	let logOut = () => {
- 		console.log("logged Out clicked");
- 		userFactory.logOut()
- 		.then(function(){
- 			console.log("logged out completed");
- 		}, function (error) {
- 			console.log("Logout Error");
- 		});
- 	};
- 	$scope.loginGoogle = () => {
- 		console.log("google Login Click");
- 		userFactory.authWithGoogle()
- 		.then((result) => {
- 			let user = result.user.uid;
- 			$location.path("/home");
- 			$scope.apply();
- 		})
- 		.catch((error) => {
- 			console.log("goog login error");
- 			let errorCode = error.code;
- 			let errorMessage = error.message;
- 			console.log("errors");
- 		});
- 	};
- });
+
+let logout = () => {
+    	console.log("logout clicked");
+    	userFactory.logOut()
+      	.then(function () {
+        	console.log("logged out");
+        	$location.href = "#!/";
+      	}, function (error) {
+        	console.log("error on logout");
+      	});
+  };
+
+$scope.loginGoogle = () => {
+	console.log("Google Login");
+
+	userFactory.authWithProvider()
+	.then((result) => {
+		let user = result.user.uid;
+		$location.path('/home');
+		$scope.$apply();
+	}).catch((error) => {
+		console.log("Google Login if F'd");
+		let errorCode = error.code;
+		let errorMessage = error.message;
+		console.log("This is why it's F'd", errorCode, errorMessage);
+	});
+};
+
+});
