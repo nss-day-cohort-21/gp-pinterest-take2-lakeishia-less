@@ -37,7 +37,6 @@ app.factory("pinFactory", function($q, $http, FBCreds){
 
 //removes the pin object from firebase based on the id. 
 	const deletePin = function(id){
-		console.log("waht is the pin ID", `${FBCreds.databaseURL}/pins/${id}.json`);
 		return $q((resolve, reject) => {
 			$http.delete(`${FBCreds.databaseURL}/pins/${id}.json`)
 			.then((response) => {
