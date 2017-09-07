@@ -54,6 +54,16 @@ app.config(($routeProvider) =>{
 			controller: 'pinListCtrl',
 			resolve: {isAuth}
 		})
+		.when('/:itemId/editpin',{
+			templateUrl: 'partials/newPinForm.html',
+			controller: 'editPinCtrl',
+			resolve: {isAuth}
+		})
+		.when('/:currentboardID/editboard',{
+			templateUrl: 'partials/newBoardForm.html',
+			controller: 'editBoardCtrl',
+			resolve: {isAuth}
+		})
 		.otherwise('/');
 });
 
