@@ -1,7 +1,11 @@
 "use strict";
 console.log("app.js");
 
+//Sets up the use of angular with PinApp, ngRoute sets up what is viewable in the ng-view portion of the index.
+
 const app = angular.module("PinApp", ["ngRoute"]);
+
+//This checks to see if the user is logged in, isAuth sets a true of false variable that will be used to check if the route is okay. 
 
 let isAuth = (userFactory) => new Promise ((resolve, reject) => {
 	console.log("This is the userFactory", userFactory);
@@ -17,14 +21,16 @@ let isAuth = (userFactory) => new Promise ((resolve, reject) => {
 	});
 });
 
+//This sets up what is viewable in ng-view, the resolve {isAuth} checks to see if isAuth is true (user logged in) so you can access that view on the main html page and the controller allows that html partial to use one of the controllers. The button when clicked calls the href that sends the hyperlink to that link (ex. Add pin button sends you to '/pin/addNewPin').
+
 app.config(($routeProvider) =>{
 	$routeProvider
+		// .when('/', {
+		// 	templateUrl: 'partials/pinList.html',
+		// 	controller: 'pinListCtrl',
+		// 	resolve: {isAuth}
+		// })
 		.when('/', {
-			templateUrl: 'partials/pinList.html',
-			controller: 'pinListCtrl',
-			resolve: {isAuth}
-		})
-		.when('/login', {
 			templateUrl: 'partials/user.html',
 			controller: 'userCtrl'
 		})
@@ -66,7 +72,7 @@ app.config(($routeProvider) =>{
 		})
 		.otherwise('/');
 });
-
+//separates your firebase credentials and calls it. 
 app.run(($location, FBCreds) => {
 	let creds = FBCreds;
 	let authConfig = {

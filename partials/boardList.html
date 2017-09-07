@@ -1,8 +1,11 @@
+<!--This is the user view. You can click on the two buttons to switch between user PinList and user BoardList. Href wasn't working with a button, so an a tag was styled with materialize button. -->
+
+
 <div class="row">
 <h1>Your Boards</h1>
 </div>
 <div class="row">
-<a class="waves-effect waves-light btn" ng-href="#!"><i class="material-icons right">add_location</i>Pins</a>
+<a class="waves-effect waves-light btn" ng-href="#!/pinList"><i class="material-icons right">add_location</i>Pins</a>
 <button class="waves-effect waves-light btn disabled"><i class="material-icons right">dashboard</i>Boards</button>
 </div>
 <div class="col s10">
@@ -27,13 +30,17 @@
         <div class="card-image">
           <img src="{{stuff.imageURL}}">
           <span class="flow-text textShadow card-title">{{stuff.title}}</span>
-          <a ng-click="boardButtonClick()" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">dashboard</i></a>
+<!--           <a ng-click="boardButtonClick()" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">dashboard</i></a> -->
         </div>
         <div class="card-content">
           <p>{{stuff.description}}</p>
           <a ng-click="showEditBoard()" ng-href="#!/{{stuff.id}}/editboard" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">edit</i></a>
         </div>
+        <div>
+          <a ng-click="deleteBoard(stuff.id)" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">remove_circle</i></a>
+        </div>
       </div>
     </div>
   </div>
 </div>
+

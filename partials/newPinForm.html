@@ -1,4 +1,18 @@
+
+<!-- $scope.title in control-addNewPin, you can change the title in the controller-->
 <h2>{{title}}</h2>
+
+<!-- materialize is used in our partials, it requires class=validate, and the ng-models will use the addNewPinCtrl to populate the $scope.pin object. The ng-click on the bottom uses the submitPin() in our controller to default back to the pinList page. -->
+
+<div class="row">
+  <div class="col s9">
+    <h2>{{title}}</h2>
+  </div>
+  <div class="col s3">
+      <a class="waves-effect waves-light btn red" ng-href="#!/pinList">
+      <i class="large material-icons left">highlight_off</i>Exit</a>
+  </div>
+</div>
 
 <div class="row">
     <form class="col s12">
@@ -33,7 +47,7 @@
             $('select').material_select();
             });
         </script>
-          <select>
+          <select ng-model="pin.boardID">
             <option value="" disabled selected>Choose A Board</option>
             <option value="1">AutoPopulate Boards</option>
           </select>

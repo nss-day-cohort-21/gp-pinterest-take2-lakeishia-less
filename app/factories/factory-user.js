@@ -1,9 +1,10 @@
 "use strict";
-
+//This is the factory that pulls in the user data. 
 app.factory("userFactory", function($q, $http){
 
 	let currentUser = null;
 
+//This provides the project with the uid. 
 	const isAuthenticated = function () {
 		console.log("userFactory: isAuthenticated");
 		return new Promise ((resolve, reject) => {
@@ -18,7 +19,7 @@ app.factory("userFactory", function($q, $http){
 			});
 		});
 	};
-
+//stores currentUser(the uid) into the getCurrentUser function. 
 	const getCurrentUser = function(){
 		return currentUser;
 	};
