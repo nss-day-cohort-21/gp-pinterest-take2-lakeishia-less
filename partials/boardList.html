@@ -27,12 +27,16 @@
         <div class="card-image">
           <img src="{{stuff.imageURL}}">
           <span class="flow-text textShadow card-title">{{stuff.title}}</span>
-          <a ng-click="boardButtonClick()" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">dashboard</i></a>
+<!--           <a ng-click="boardButtonClick()" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">dashboard</i></a> -->
         </div>
         <div class="card-content">
           <p>{{stuff.description}}</p>
+        </div>
+        <div>
+          <a ng-click="deleteBoard(stuff.id)" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">remove_circle</i></a>
         </div>
       </div>
     </div>
   </div>
 </div>
+
