@@ -34,6 +34,7 @@
         </div>
         <div class="card-content">
           <p>{{stuff.description}}</p>
+          <a ng-click="showEditBoard()" ng-href="#!/{{stuff.id}}/editboard" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">edit</i></a>
         </div>
         <div>
           <a ng-click="deleteBoard(stuff.id)" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">remove_circle</i></a>

@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("editPinCtrl", function($scope, pinFactory, $location, userFactory){
+app.controller("editPinCtrl", function($scope, pinFactory, $location, userFactory, $routeParams){
 
 	$scope.title = "Edit Pin";
 	$scope.submitButtonText = "Edit Pin";
@@ -15,11 +15,21 @@ app.controller("editPinCtrl", function($scope, pinFactory, $location, userFactor
 		uid: user
 	};
 
+   const showEditPin = function(){
+    	pinFactory.getSinglePin($routeParams.itemId)
+    	.then((data) => {
+    		console.log("data", data);
+    		$scope.pin = data;
+    		$scope.pin.id = $routeParams.itemId;
+    	});
+    };
+
 	$scope.submitPin = function(){
-		pinFactory.addPin($scope.pin)
+		pinFactory.editPin($routeParams.itemId, $scope.pin)
 		.then((data) => {
 			$location.url("/pinList");
 		});
 	};
 
+	showEditPin();
 });
