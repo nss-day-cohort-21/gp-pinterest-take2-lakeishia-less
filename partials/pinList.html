@@ -1,0 +1,44 @@
+<div class="row">
+<h1>Your Pins</h1>
+</div>
+<div class="row">
+<button class="waves-effect waves-light btn disabled"><i class="material-icons left">add_location</i>Pins</button>
+<a class="waves-effect waves-light btn" ng-href="#!/boardList"><i class="material-icons right">dashboard</i>Boards</a>
+</div>
+<div class="col s10">
+	<div class="row">
+        <div class="col s3 m2">
+          <div class="card">
+            <div class="card-image center">
+              <a ng-href="#!/pin/addNewPin"><i class="large material-icons">add</i></a>
+            </div>
+            <div class="card-content">
+              <p>Click the + to add a new pin to your wall.</p>
+            </div>
+          </div>
+        </div>
+   </div>
+</div>
+
+<div class="row">
+  <div ng-repeat="stuff in pins">
+    <div class="col s7 m4">
+      <div class="card">
+        <div class="card-image">
+          <img src="{{stuff.imageURL}}">
+          <span class="flow-text textShadow card-title"><a href="{{stuff.siteURL}}"  target="_blank">{{stuff.title}}</a></span>
+          <!-- <a ng-click="buttonClick()" class="btn-floating halfway-fab waves-effect waves-light blue"><i class="material-icons">place</i></a> -->
+        </div>
+        <div class="card-content">
+          <p>{{stuff.description}}</p>
+        </div>
+        <div>
+          <a ng-click="deleteBoard()" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">remove_circle</i></a>
+        </div>
+        <div>
+          <a ng-click="deleteBoard()" class="btn-floating btn-small waves-effect waves-light yellow"><i class="material-icons">edit</i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

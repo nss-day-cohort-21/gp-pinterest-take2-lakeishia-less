@@ -1,20 +1,20 @@
 "use strict";
 
-app.factory("pinFactory", function($q, $http, FBCreds){
+app.factory("boardFactory", function($q, $http, FBCreds){
 	
-	const getAllPins = function(user){
-		let pins = [];
-		console.log("url is", `${FBCreds.databaseURL}/pins.json?orderBy="uid"&equalTo="${user}"`);
+	const getAllBoards = function(user){
+		let boards = [];
+		console.log("url is", `${FBCreds.databaseURL}/boards.json?orderBy="uid"&equalTo="${user}"`);
 		return $q((resolve, reject) => {
-			$http.get(`${FBCreds.databaseURL}/pins.json?orderBy="uid"&equalTo="${user}"`)
+			$http.get(`${FBCreds.databaseURL}/boards.json?orderBy="uid"&equalTo="${user}"`)
 			.then((itemObject)=>{
 				let itemCollection = itemObject.data;
 				console.log("itemCollection", itemCollection);
 				Object.keys(itemCollection).forEach((key) => {
 					itemCollection[key].id = key;
-					pins.push(itemCollection[key]);
+					boards.push(itemCollection[key]);
 				});
-				resolve(pins);
+				resolve(boards);
 			})
 			.catch((error) => {
 				reject(error);
@@ -22,9 +22,9 @@ app.factory("pinFactory", function($q, $http, FBCreds){
 		});
 	};
 
-	const addPin = function(obj){
+	const addBoard = function(obj){
 		let newObj = JSON.stringify(obj);
-		return $http.post(`${FBCreds.databaseURL}/pins.json`, newObj)
+		return $http.post(`${FBCreds.databaseURL}/boards.json`, newObj)
 		.then ((data) => {
 			console.log("data", data);
 			return data;
@@ -34,10 +34,10 @@ app.factory("pinFactory", function($q, $http, FBCreds){
 			console.log("error", errorCode, errorMessage);
 		});
 	};
-	const deletePin = function(id){
-		console.log("waht is the pin ID", `${FBCreds.databaseURL}/pins/${id}.json`);
+
+	const deleteBoard = function(id){
 		return $q((resolve, reject) => {
-			$http.delete(`${FBCreds.databaseURL}/pins/${id}.json`)
+			$http.delete(`${FBCreds.databaseURL}/boards/${id}.json`)
 			.then((response) => {
 				resolve(response);
 			})
@@ -47,5 +47,5 @@ app.factory("pinFactory", function($q, $http, FBCreds){
 		});
 	};
 
-	return {getAllPins, addPin, deletePin};
+	return {getAllBoards, addBoard, deleteBoard};
 });
