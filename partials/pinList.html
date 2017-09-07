@@ -1,3 +1,5 @@
+<!--This is the user view. You can click on the two buttons to switch between user PinList and user BoardList. Href wasn't working with a button, so an a tag was styled with materialize button. -->
+
 <div class="row">
 <h1>Your Pins</h1>
 </div>
@@ -19,6 +21,8 @@
         </div>
    </div>
 </div>
+
+<!-- This starts the ng-repeat that populates the page with card objects from the pins array. There is an anchor tag on the stuff.title that will send you to the added site link the image is attached to when you click the title. -->
 
 <div class="row">
   <div ng-repeat="stuff in pins">
