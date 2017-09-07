@@ -26,17 +26,15 @@
 <div class="row">
   <div ng-repeat="stuff in boards">
     <div class="col s7 m4">
-      <div class="card">
+      <div  class="card">
         <div class="card-image">
           <img src="{{stuff.imageURL}}">
           <span class="flow-text textShadow card-title">{{stuff.title}}</span>
-<!--           <a ng-click="boardButtonClick()" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">dashboard</i></a> -->
+           <a ng-click="boardButtonClick()" ng-href="#!/pinsOnBoard"  class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">dashboard</i></a> 
         </div>
         <div class="card-content">
           <p>{{stuff.description}}</p>
-          <a ng-click="showEditBoard()" ng-href="#!/{{stuff.id}}/editboard" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">edit</i></a>
-        </div>
-        <div>
+          <a ng-click="showEditBoard()" ng-href="#!/{{stuff.id}}/editboard" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">edit</i></a>
           <a ng-click="deleteBoard(stuff.id)" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">remove_circle</i></a>
         </div>
       </div>

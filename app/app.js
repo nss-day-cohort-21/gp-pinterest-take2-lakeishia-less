@@ -70,6 +70,11 @@ app.config(($routeProvider) =>{
 			controller: 'editBoardCtrl',
 			resolve: {isAuth}
 		})
+		.when('/pinsOnBoard',{
+			templateUrl: 'partials/showPinsOnBoard.html',
+			controller: 'BoardPinsCtrl',
+			resolve: {isAuth}
+		})
 		.otherwise('/');
 });
 //separates your firebase credentials and calls it. 
