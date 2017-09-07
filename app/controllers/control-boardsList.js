@@ -1,7 +1,7 @@
 "use strict";
 
 app.controller('boardListCtrl', function($scope, boardFactory, userFactory){
-
+//This has the same functionality as the pinsList, but stores the board information into an array. 
 	$scope.boards = [];
 	let user = userFactory.getCurrentUser();
 	console.log("user list", user);

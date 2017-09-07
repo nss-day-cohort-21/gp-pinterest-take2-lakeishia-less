@@ -1,5 +1,7 @@
+<!-- $scope.title in control-addNewPin, you can change the title in the controller-->
 <h2>{{title}}</h2>
 
+<!-- materialize is used in our partials, it requires class=validate, and the ng-models will use the addNewPinCtrl to populate the $scope.pin object. The ng-click on the bottom uses the submitPin() in our controller to default back to the pinList page. -->
 <div class="row">
     <form class="col s12">
       <div class="row">

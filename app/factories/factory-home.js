@@ -1,7 +1,7 @@
 "use strict";
-
+//This is the main factory that targets the firebaseURL and pulls down the data stored there. 
 app.factory("pinFactory", function($q, $http, FBCreds){
-	
+//getAllPins pulls every pin into the array based on the user (note the URL). It sorts the data by keys and pushes the sorted data into the array. 
 	const getAllPins = function(user){
 		let pins = [];
 		console.log("url is", `${FBCreds.databaseURL}/pins.json?orderBy="uid"&equalTo="${user}"`);
@@ -21,7 +21,7 @@ app.factory("pinFactory", function($q, $http, FBCreds){
 			});
 		});
 	};
-
+//pushes the object stored in addNewPin up to firebase.
 	const addPin = function(obj){
 		let newObj = JSON.stringify(obj);
 		return $http.post(`${FBCreds.databaseURL}/pins.json`, newObj)
@@ -34,6 +34,8 @@ app.factory("pinFactory", function($q, $http, FBCreds){
 			console.log("error", errorCode, errorMessage);
 		});
 	};
+
+//removes the pin object from firebase based on the id. 
 	const deletePin = function(id){
 		console.log("waht is the pin ID", `${FBCreds.databaseURL}/pins/${id}.json`);
 		return $q((resolve, reject) => {
