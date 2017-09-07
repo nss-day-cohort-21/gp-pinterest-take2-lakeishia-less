@@ -1,0 +1,60 @@
+<h2>{{title}}</h2>
+
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="title" type="text" class="validate" ng-model="board.title">
+          <label for="board_title">Board Title</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="description" type="text" class="validate" ng-model="board.description">
+          <label for="board_description">Description</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+        <script type="text/javascript">
+           $(document).ready(function() {
+            $('select').material_select();
+            });
+        </script>
+          <select>
+            <option value="" disabled selected>Choose A Category</option>
+            <option value="1">Animals and Pets</option>
+            <option value="2">Architecture</option>
+            <option value="3">Art</option>
+            <option value="4">Cars</option>
+            <option value="5">Celebrities</option>
+            <option value="6">Design</option>
+            <option value="7">Eduction</option>
+            <option value="8">Food</option>
+            <option value="9">Health and Fitness</option>
+            <option value="10">History</option>
+            <option value="11">Humor</option>
+            <option value="12">Science</option>
+            <option value="13">Sports</option>
+            <option value="14">Travel</option>
+            <option value="15">Weddings</option>
+            <option value="16">Other</option>
+          </select>
+          <label>Category Select</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="imageURL" type="text" class="validate" ng-model="board.imageURL">
+          <label for="image_URL">Image URL</label>
+        </div>
+      </div>
+      <div class="row">
+      	<div class="input-field col s12">
+          <button class="waves-effect waves-light btn" ng-click="submitBoard()"><i class="large material-icons">fiber_pin</i>  {{submitButtonText}}</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+ 

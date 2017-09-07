@@ -1,0 +1,49 @@
+<h2>{{title}}</h2>
+
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="title" type="text" class="validate" ng-model="pin.title">
+          <label for="pin_title">Pin Title</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="description" type="text" class="validate" ng-model="pin.description">
+          <label for="pin_description">Description</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="siteURL" type="text" class="validate" ng-model="pin.siteURL">
+          <label for="site_URL">Website URL</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="imageURL" type="text" class="validate" ng-model="pin.imageURL">
+          <label for="image_URL">Image URL</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+        <script type="text/javascript">
+           $(document).ready(function() {
+            $('select').material_select();
+            });
+        </script>
+          <select>
+            <option value="" disabled selected>Choose A Board</option>
+            <option value="1">AutoPopulate Boards</option>
+          </select>
+          <label>Pin To A Board</label>
+        </div>
+      </div>
+      <div class="row">
+      	<div class="input-field col s12">
+          <button class="waves-effect waves-light btn" ng-click="submitPin()"><i class="large material-icons">fiber_pin</i>  {{submitButtonText}}</button>
+        </div>
+      </div>
+    </form>
+  </div>

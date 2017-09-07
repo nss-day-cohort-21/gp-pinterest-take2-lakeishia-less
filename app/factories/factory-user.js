@@ -1,53 +1,37 @@
 "use strict";
 
-
-/*
-    Gets the data of what user is currently logged in. 
- */
-
-app.factory('userFactory', function($q, $http){
+app.factory("userFactory", function($q, $http){
 
 	let currentUser = null;
 
-	const isAuthenticated = function(){
-		console.log('PinApp: isAuthenticated');
-		return new Promise((resolve, reject) =>{
-			firebase.auth().onAuthStateChanged((user) =>{
-				if(user){
+	const isAuthenticated = function () {
+		console.log("userFactory: isAuthenticated");
+		return new Promise ((resolve, reject) => {
+			firebase.auth().onAuthStateChanged((user) => {
+				if (user){
 					currentUser = user.uid;
 					console.log("user", user.uid);
 					resolve(true);
-					return currentUser;
-				}else{
+				}else {
 					resolve(false);
 				}
 			});
 		});
-		
 	};
-console.log("logged in current test", currentUser);
 
 	const getCurrentUser = function(){
 		return currentUser;
 	};
 
-	const addUID = function(){
-		// currentUser = user.uid;
-		// console.log("", value);
-	};
-
 	const logOut = function(){
-		console.log("logOutUser");
+		console.log("logoutUser");
 		return firebase.auth().signOut();
 	};
 
 	let provider = new firebase.auth.GoogleAuthProvider();
 
-	let authWithGoogle = function(){
+	let authWithProvider = function(){
 		return firebase.auth().signInWithPopup(provider);
 	};
-
-
-	return {isAuthenticated, getCurrentUser, logOut, authWithGoogle, addUID};
+	return {isAuthenticated, getCurrentUser, logOut, authWithProvider};
 });
-
