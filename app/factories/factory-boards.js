@@ -47,5 +47,6 @@ app.factory("boardFactory", function($q, $http, FBCreds){
 		});
 	};
 
+
 	return {getAllBoards, addBoard, deleteBoard};
 });
