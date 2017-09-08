@@ -25,21 +25,22 @@
 <!-- This starts the ng-repeat that populates the page with card objects from the pins array. There is an anchor tag on the stuff.title that will send you to the added site link the image is attached to when you click the title. -->
 
 <div class="row">
-  <div ng-repeat="stuff in boardPins">
+  <div ng-repeat="pins in boardPins">
+  <p>{{boardPins}}</p>
     <div class="col s7 m4">
       <div class="card">
         <div class="card-image">
-          <img src="{{stuff.imageURL}}">
-          <span class="flow-text textShadow card-title"><a href="{{stuff.siteURL}}"  target="_blank">{{stuff.title}}</a></span>
+          <img src="{{pins.imageURL}}">
+          <span class="flow-text textShadow card-title"><a href="{{pins.siteURL}}"  target="_blank">{{pins.title}}</a></span>
         </div>
         <div class="card-content">
-          <p>{{stuff.description}}</p>
+          <p>{{pins.description}}</p>
         </div>
         <div>
-          <a ng-click="deletePin(stuff.id)" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">remove_circle</i></a>
+          <a ng-click="deletePin(pins.id)" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">remove_circle</i></a>
         </div>
         <div>
-          <a ng-click="deleteBoard()" ng-href="#!/{{stuff.id}}/editpin" class="btn-floating btn-small waves-effect waves-light yellow"><i class="material-icons">edit</i></a>
+          <a ng-click="deleteBoard()" ng-href="#!/{{pins.id}}/editpin" class="btn-floating btn-small waves-effect waves-light yellow"><i class="material-icons">edit</i></a>
         </div>
       </div>
     </div>

@@ -31,12 +31,12 @@
           <img src="{{stuff.imageURL}}">
           <span class="flow-text textShadow card-title">{{stuff.title}}</span>
             <div ng-controller="BoardPinsCtrl">
-            <a ng-click="showAllBoardPins(stuff.title)" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">dashboard</i></a> 
+            <a ng-click="showAllBoardPins(stuff.title)" class="btn-floating halfway-fab waves-effect waves-light blue"><i class="material-icons">dashboard</i></a> 
             </div>
         </div>
         <div class="card-content">
           <p>{{stuff.description}}</p>
-          <a ng-click="showEditBoard()" ng-href="#!/{{stuff.id}}/editboard" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">edit</i></a>
+          <a ng-click="showEditBoard()" ng-href="#!/{{stuff.id}}/editboard" class="btn-floating btn-small waves-effect waves-light yellow"><i class="material-icons">edit</i></a>
           <a ng-click="deleteBoard(stuff.id)" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">remove_circle</i></a>
         </div>
       </div>
