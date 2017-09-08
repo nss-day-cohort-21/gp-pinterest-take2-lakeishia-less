@@ -1,16 +1,17 @@
 "use strict";
 
-app.controller('BoardPinsCtrl', function($scope, $location,  pinFactory, userFactory){
+app.controller('BoardPinsCtrl', function($scope, $location, pinFactory, userFactory){
 
 	$scope.boardPins = [];
-	let boardID = pinFactory.getAllPinsByBoard();
 	
-	const showAllBoardPins = function(){
+	$scope.showAllBoardPins = function(boardID){
 		pinFactory.getAllPinsByBoard(boardID)
-		.then((boards) => {
-			console.log("showAllBoards from promise", boards);
+		.then((boardPins) => {
+			$location.path('/pinsOnBoard');
+			console.log("showFiltered " + boardID + " from promise", boardPins);
 			$scope.boardPins = boardPins;
+			
 		});
 	};
-    showAllBoardPins();
+    // showAllBoardPins();
 });

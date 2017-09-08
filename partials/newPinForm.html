@@ -37,23 +37,20 @@
         </div>
       </div>
       <div class="row">
+      <label for="boardID">Board Selection</label>
         <div class="input-field col s12">
-<!--         <script type="text/javascript">
-           $(document).ready(function() {
-            $('select').material_select();
-            });
-        </script> -->
           <div ng-controller="boardListCtrl">
-          <!-- <p ng-repeat="board in boards">{{board.title}}</p> -->
-         <select class="browser-default" ng-model="boardID">
+         <select name="boardCatetory" class="browser-default" name="BoardTitle" ng-model="pin.boardID">
+            <option value="" disabled selected>Save to a board</option>
             <option ng-repeat="board in boards" value="{{board.title}}">{{board.title}}</option>           
-         </select> 
+         </select>
+
         </div>
       </div>
       </div>
       <div class="row">
       	<div class="input-field col s12">
-          <button class="waves-effect waves-light btn" ng-click="submitPin()"><i class="large material-icons">fiber_pin</i>  {{submitButtonText}}</button>
+          <button class="waves-effect waves-light btn" ng-click="submitPin()"><i class="large material-icons">fiber_pin</i>{{submitButtonText}}</button>
         </div>
       </div>
     </form>

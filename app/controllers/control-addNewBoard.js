@@ -7,7 +7,7 @@ app.controller("addNewBoardCtrl", function($scope, boardFactory, $location, user
 	let user = userFactory.getCurrentUser();
 
 	$scope.board = {
-		boardID: "",
+		// boardID: "",
 		description: "",
 		imageURL: "",
 		category: "",

@@ -30,7 +30,9 @@
         <div class="card-image">
           <img src="{{stuff.imageURL}}">
           <span class="flow-text textShadow card-title">{{stuff.title}}</span>
-           <a ng-click="boardButtonClick()" ng-href="#!/pinsOnBoard"  class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">dashboard</i></a> 
+            <div ng-controller="BoardPinsCtrl">
+            <a ng-click="showAllBoardPins(stuff.title)" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">dashboard</i></a> 
+            </div>
         </div>
         <div class="card-content">
           <p>{{stuff.description}}</p>
