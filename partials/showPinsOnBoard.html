@@ -1,7 +1,25 @@
 <!--This is the user view. You can click on the two buttons to switch between user PinList and user BoardList. Href wasn't working with a button, so an a tag was styled with materialize button. -->
 
 <div class="row">
-<h1>Your Pins on {{boardPins.title}}</h1>
+<h1>Board Pins</h1>
+</div>
+<div class="row">
+<a class="waves-effect waves-light btn" ng-href="#!/pinList"><i class="material-icons left">add_location</i>Pins</a>
+<a class="waves-effect waves-light btn" ng-href="#!/boardList"><i class="material-icons right">dashboard</i>Boards</a>
+</div>
+<div class="col s10">
+  <div class="row">
+        <div class="col s3 m2">
+          <div class="card">
+            <div class="card-image center">
+              <a ng-href="#!/pin/addNewPin"><i class="large material-icons">add</i></a>
+            </div>
+            <div class="card-content">
+              <p>Click the + to add a new pin to your wall.</p>
+            </div>
+          </div>
+        </div>
+   </div>
 </div>
 
 <!-- This starts the ng-repeat that populates the page with card objects from the pins array. There is an anchor tag on the stuff.title that will send you to the added site link the image is attached to when you click the title. -->
@@ -13,7 +31,6 @@
         <div class="card-image">
           <img src="{{stuff.imageURL}}">
           <span class="flow-text textShadow card-title"><a href="{{stuff.siteURL}}"  target="_blank">{{stuff.title}}</a></span>
-          <!-- <a ng-click="buttonClick()" class="btn-floating halfway-fab waves-effect waves-light blue"><i class="material-icons">place</i></a> -->
         </div>
         <div class="card-content">
           <p>{{stuff.description}}</p>
