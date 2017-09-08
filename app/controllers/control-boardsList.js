@@ -20,5 +20,20 @@ app.controller('boardListCtrl', function($scope, boardFactory, userFactory){
 					showAllBoards();
 		});
 	};
+
+	$scope.test = [
+	{
+	name: "austin"
+	},
+	{
+	name: "Matt"
+	},
+	{
+	name: "Malcolm"
+	},
+	{
+	name: "Tyler"
+	}
+	];
 	showAllBoards();
 });
