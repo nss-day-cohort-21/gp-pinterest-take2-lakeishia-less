@@ -47,7 +47,7 @@ app.factory("pinFactory", function($q, $http, FBCreds){
 			});
 		});
 	};
-
+//grabs a single pin using the $routeParams.itemId and the URL route when a pin is clicked.
 	const getSinglePin = function(itemId){
         return $q((resolve, reject) =>{
             $http.get(`${FBCreds.databaseURL}/pins/${itemId}.json`)
@@ -71,7 +71,7 @@ app.factory("pinFactory", function($q, $http, FBCreds){
             });
         });
     };
-
+//This takes in the new edited data(obj) and pathes it to the firebase with the same ID.
      const editPin = function(id, obj) {
         console.log("id and obj to update", id, obj);
         return $q((resolve, reject) => {
@@ -99,5 +99,26 @@ app.factory("pinFactory", function($q, $http, FBCreds){
         });
     };
 
-	return {getAllPins, addPin, deletePin, getSinglePin, editPin, editBoard, getSingleBoard};
+    const getAllPinsByBoard = function (user){
+        let boardPins = [];
+        console.log("url is", `${FBCreds.databaseURL}/pins.json?orderBy="boardID"&equalTo="${user}"`);
+		return $q((resolve, reject) => {
+			$http.get(`${FBCreds.databaseURL}/pins.json?orderBy="boardID"&equalTo="${user}"`)
+			.then((itemObject)=>{
+				let itemCollection = itemObject.data;
+				console.log("itemCollection", itemCollection);
+				Object.keys(itemCollection).forEach((key) => {
+					itemCollection[key].id = key;
+					boardPins.push(itemCollection[key]);
+				});
+				resolve(boardPins);
+			})
+			.catch((error) => {
+				reject(error);
+			    });
+		    });
+	    };
+    
+
+	return {getAllPins, addPin, deletePin, getSinglePin, editPin, editBoard, getSingleBoard, getAllPinsByBoard};
 });

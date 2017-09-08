@@ -14,7 +14,7 @@ app.controller("editPinCtrl", function($scope, pinFactory, $location, userFactor
 		title: "",
 		uid: user
 	};
-
+//this calls the pinFactory to get a single pin with the function. $routeParams.itemId grabs the itemId from the URL. 
    const showEditPin = function(){
     	pinFactory.getSinglePin($routeParams.itemId)
     	.then((data) => {
